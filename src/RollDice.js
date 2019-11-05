@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './RollDice.css';
+import Die from "./Die";
 
 class RollDice extends Component {
   constructor(props) {
@@ -9,8 +10,9 @@ class RollDice extends Component {
 
   render() {
     return (
-        <div>
-          <i className="fas fa-dice-one fa-10x"></i>
+        <div className="RollDice">
+          <Die />
+          <Die />
         </div>
     );
   }
