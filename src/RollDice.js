@@ -9,6 +9,8 @@ class RollDice extends Component {
       die1: 'one',
       die2: 'one',
       rolling: false,
+      rollingOut: false,
+      rollingIn: false,
     };
     this.rollDie = this.rollDie.bind(this);
   }
@@ -30,10 +32,23 @@ class RollDice extends Component {
     }
     const roll1 = getRandomInt(1, 6);
     const roll2 = getRandomInt(1, 6);
-    this.setState({rolling: true});
+    this.setState({
+      rolling: true,
+      rollingOut: true,
+    });
     setTimeout(e => {
-      this.setState({die1: roll1, die2: roll2});
-      this.setState({rolling: false});
+      this.setState({
+        die1: roll1,
+        die2: roll2,
+        rolling: false,
+        rollingOut: false,
+        rollingIn: true,
+      });
+      setTimeout(e => {
+        this.setState({
+          rollingIn: false,
+        });
+      }, 1000);
     }, 1000);
   };
 
@@ -41,13 +56,21 @@ class RollDice extends Component {
     return (
         <div className="RollDice">
           <div className="RollDice-die">
-            <Die num={this.state.die1} rolling={this.state.rolling}/>
-            <Die num={this.state.die2} rolling={this.state.rolling}/>
+            <Die
+                num={this.state.die1}
+                rollingOut={this.state.rollingOut}
+                rollingIn={this.state.rollingIn}
+            />
+            <Die
+                num={this.state.die2}
+                rollingOut={this.state.rollingOut}
+                rollingIn={this.state.rollingIn}
+            />
           </div>
           <button
-              className={`RollDice-button ${this.state.rolling ? 'rolling' : ''}`}
+              className={`RollDice-button ${this.state.rollingOut ? 'rolling' : ''}`}
               onClick={this.rollDie}>
-            {this.state.rolling ? 'ROLLING...' : 'Roll Dice !'}
+            {this.state.rollingOut ? 'ROLLING...' : 'Let\'s Roll Dice !'}
           </button>
         </div>
     );
