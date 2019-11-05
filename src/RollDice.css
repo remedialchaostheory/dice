@@ -3,9 +3,24 @@
   grid-template-columns: 200px 200px;
   justify-content: center;
   padding: 10rem 10rem 4rem 10rem;
-  color: #161490;
+  color: #000086;
 }
 
 .RollDice-button {
   justify-items: center;
+  padding: 1.5rem 3rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: black;
+}
+
+.RollDice-button:hover {
+  background-color: #000064;
+}
+
+.rolling {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
