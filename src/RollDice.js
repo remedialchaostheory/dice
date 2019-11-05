@@ -12,6 +12,7 @@ class RollDice extends Component {
     };
     this.rollDie = this.rollDie.bind(this);
   }
+
   rollDie = e => {
     function getRandomInt(min, max) {
       min = Math.ceil(min);
@@ -40,11 +41,13 @@ class RollDice extends Component {
     return (
         <div className="RollDice">
           <div className="RollDice-die">
-            <Die num={this.state.die1}/>
-            <Die num={this.state.die2}/>
+            <Die num={this.state.die1} rolling={this.state.rolling}/>
+            <Die num={this.state.die2} rolling={this.state.rolling}/>
           </div>
-          <button className={`RollDice-button ${this.state.rolling ? 'rolling' : ''}`} onClick={this.rollDie}>
-            rOLL dICE !
+          <button
+              className={`RollDice-button ${this.state.rolling ? 'rolling' : ''}`}
+              onClick={this.rollDie}>
+            {this.state.rolling ? 'ROLLING...' : 'Roll Dice !'}
           </button>
         </div>
     );
