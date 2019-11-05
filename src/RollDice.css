@@ -1,6 +1,11 @@
-.RollDice {
+.RollDice-die {
   display: grid;
   grid-template-columns: 200px 200px;
   justify-content: center;
-  padding: 10rem;
+  padding: 10rem 10rem 4rem 10rem;
+  color: #161490;
+}
+
+.RollDice-button {
+  justify-items: center;
 }

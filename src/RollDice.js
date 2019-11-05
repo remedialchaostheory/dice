@@ -11,8 +11,11 @@ class RollDice extends Component {
   render() {
     return (
         <div className="RollDice">
-          <Die />
-          <Die />
+          <div className="RollDice-die">
+            <Die />
+            <Die />
+          </div>
+          <button className="RollDice-button">Rolling</button>
         </div>
     );
   }
