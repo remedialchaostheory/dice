@@ -46,6 +46,7 @@ class RollDice extends Component {
       });
       setTimeout(e => {
         this.setState({
+          rolling: false,
           rollingIn: false,
         });
       }, 1000);
@@ -69,7 +70,9 @@ class RollDice extends Component {
           </div>
           <button
               className={`RollDice-button ${this.state.rollingOut ? 'rolling' : ''}`}
-              onClick={this.rollDie}>
+              onClick={this.rollDie}
+              disabled={this.state.rolling}
+          >
             {this.state.rollingOut ? 'ROLLING...' : 'Let\'s Roll Dice !'}
           </button>
         </div>
