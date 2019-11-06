@@ -6,8 +6,8 @@ class Die extends Component {
     return (
         <div className={
           `Die 
-          ${this.props.rollingOut ? 'animated faster rollOut' : ''}
-          ${this.props.rollingIn ? 'animated rollIn' : ''}`
+          ${this.props.rollingOut && 'animated faster rollOut'}
+          ${this.props.rollingIn && 'animated rollIn'}`
         }>
           <i className={`fas fa-10x fa-dice-${this.props.num}`}></i>
         </div>

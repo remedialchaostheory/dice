@@ -69,7 +69,7 @@ class RollDice extends Component {
             />
           </div>
           <button
-              className={`RollDice-button ${this.state.rollingOut ? 'rolling' : ''}`}
+              className={`RollDice-button ${this.state.rollingOut && 'rolling'}`}
               onClick={this.rollDie}
               disabled={this.state.rolling}
           >
