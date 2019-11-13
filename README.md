@@ -1,3 +1,6 @@
+[Demo](https://rct-dice-roll.s3.amazonaws.com/index.html)
+
+Feeling lucky??
+
 Roll a pair of die!
 
-Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
